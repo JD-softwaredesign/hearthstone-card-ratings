@@ -1,0 +1,19 @@
+class CreateCards < ActiveRecord::Migration
+  def change
+    create_table :cards do |t|
+      t.string :image_url, null: false
+      t.string :name, null: false
+      t.string :class, null: false
+      t.string :tribe
+      t.integer :mana, null: false
+      t.integer :attack, null: false
+      t.integer :health, null: false
+      t.text :card_text
+      t.integer :expansion_id, null: false
+      t.boolean :released, default: false
+
+      t.timestamps null: false
+    end
+    add_index :cards, :expansion_id
+  end
+end
