@@ -7,18 +7,22 @@ class SignUpForm extends React.Component {
     this.state = {
       username: "",
       password: "",
-      password_confirmation: ""
+      confirmation: ""
     };
     this.handleInput = this.handleInput.bind(this);
   }
 
   errorGenerator(errors) {
+    // errors will be in array
     if (errors) {
-      return errors.map((e, idx) => (<p key={e.length + idx} className='error'>{e}</p>));
+      return errors.map((e, idx) => {
+        return <p key={e.length + idx} className='error'>{e}</p>;
+      });
     }
   }
 
   componentWillReceiveProps(props) {
+    // when user is signed in, redirect to home
     if (props.signedIn) {
       this.props.router.push('/');
     }
@@ -40,7 +44,7 @@ class SignUpForm extends React.Component {
   }
 
   render() {
-    const { password, password_confirmation, username } = this.state;
+    const { password, confirmation, username } = this.state;
     const { errors } = this.props;
     return (
       <div>
@@ -60,15 +64,15 @@ class SignUpForm extends React.Component {
           { this.errorGenerator(errors.password) }
 
           <input type='password'
-            name="password_confirmation"
+            name="confirmation"
             onChange={this.handleInput}
             placeholder="Password Confirmation"
-            value={ password_confirmation }/>
+            value={ confirmation }/>
           <p className='error'>
-            { password !==  password_confirmation ? "The password confirmation doesn't match with password." : ""}
+            { password !==  confirmation ? "The password confirmation doesn't match with password." : ""}
           </p>
 
-          <button disabled={ password === '' || password !== password_confirmation }
+          <button disabled={ password === '' || password !== confirmation }
             >Sign Up</button>
         </form>
       </div>

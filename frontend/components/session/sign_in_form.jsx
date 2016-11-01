@@ -12,12 +12,16 @@ class SignInForm extends React.Component {
   }
 
   errorGenerator(errors) {
+    // errors will be in array
     if (errors) {
-      return errors.map((e, idx) => (<p key={e.length + idx} className='error'>{e}</p>));
+      return errors.map((e, idx) => {
+        return <p key={e.length + idx} className='error'>{e}</p>;
+      });
     }
   }
 
   componentWillReceiveProps(props) {
+    // when user is signed in, redirect to home
     if (props.signedIn) {
       this.props.router.push('/');
     }
