@@ -5,8 +5,7 @@ import React from 'react';
 // <Footer />
 
 const App = ({children}) => (
-  <div>
-    <h1>Welcome!</h1>
+  <div id="splash">
     {children}
   </div>
 );

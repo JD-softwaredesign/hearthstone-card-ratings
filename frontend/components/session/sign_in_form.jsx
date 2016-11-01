@@ -45,7 +45,7 @@ class SignInForm extends React.Component {
   render() {
     const { errors } = this.props;
     return (
-      <div>
+      <div id="session">
         <form>
           <input type='text'
             name="username"

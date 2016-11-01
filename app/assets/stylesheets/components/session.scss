@@ -1,0 +1,24 @@
+#session {
+  min-height: 100vh;
+  background-image: url("http://res.cloudinary.com/loudsounds/image/upload/v1477973355/hs_splash_wxggtm.jpg");
+  background-position: center center;
+}
+
+#session form {
+
+}
+
+#session input {
+  border: 1px solid black;
+  padding: 5px 10px;
+}
+
+#session button {
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#session button:hover {
+  background: #eee;
+}
