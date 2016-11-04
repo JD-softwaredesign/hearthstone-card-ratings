@@ -17,18 +17,18 @@ ActiveRecord::Schema.define(version: 20161031022234) do
   enable_extension "plpgsql"
 
   create_table "cards", force: :cascade do |t|
-    t.string   "image_url",                    null: false
-    t.string   "name",                         null: false
-    t.string   "class",                        null: false
+    t.string   "image_url",    null: false
+    t.string   "name",         null: false
+    t.string   "hero_class",   null: false
     t.string   "tribe"
-    t.integer  "mana",                         null: false
-    t.integer  "attack",                       null: false
-    t.integer  "health",                       null: false
+    t.integer  "mana",         null: false
+    t.integer  "attack",       null: false
+    t.integer  "health",       null: false
     t.text     "card_text"
-    t.integer  "expansion_id",                 null: false
-    t.boolean  "released",     default: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.integer  "expansion_id", null: false
+    t.boolean  "released",     null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   add_index "cards", ["expansion_id"], name: "index_cards_on_expansion_id", using: :btree
