@@ -1,1 +1,2 @@
-json.expansions @expansions, :id, :title
+json.current @current
+json.index @expansions, :id, :title

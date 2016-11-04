@@ -10,6 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
     session: {
       currentUser: undefined,
       signedIn: false
+    },
+    expansions: {
+      current: undefined,
+      index: []
     }
   };
   if (window.currentUser) {

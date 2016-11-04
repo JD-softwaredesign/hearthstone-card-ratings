@@ -47,7 +47,7 @@ class SignUpForm extends React.Component {
     const { password, confirmation, username } = this.state;
     const { errors } = this.props;
     return (
-      <div>
+      <div id="session">
         <form onSubmit={this.handleSubmit.bind(this)}>
           <input type='text'
             name="username"
