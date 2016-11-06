@@ -4,6 +4,8 @@ import App from './app';
 import SignUpFormContainer from './session/sign_up_form_container.js';
 import SignInFormContainer from './session/sign_in_form_container.js';
 import { clearErrors } from '../actions/error_actions.js';
+import { requestExpansions } from './../actions/expansion_actions.js';
+import { requestExpansionCards } from './../actions/card_actions.js';
 
 class AppRouter extends React.Component{
   constructor(props){
@@ -11,6 +13,13 @@ class AppRouter extends React.Component{
     this._redirectIfLoggedIn = this._redirectIfLoggedIn.bind(this);
     this._clearErrorsWhenLeave = this._clearErrorsWhenLeave.bind(this);
     this._ensureSignedIn = this._ensureSignedIn.bind(this);
+    this._initialFetch = this._initialFetch.bind(this);
+  }
+
+  _initialFetch() {
+    if (!this.context.store.getState().expansions.index.length) {
+      this.context.store.dispatch(requestExpansions());
+    }
   }
 
   _redirectIfLoggedIn(nextState, replace){
@@ -35,7 +44,7 @@ class AppRouter extends React.Component{
   render() {
     return (
       <Router history={hashHistory}>
-        <Route path="/" component={ App }>
+        <Route path="/" component={ App } onEnter={ this._initialFetch }>
           <Route path="signup" component={SignUpFormContainer}
             onEnter={ this._redirectIfLoggedIn }
             onLeave={ this._clearErrorsWhenLeave } />

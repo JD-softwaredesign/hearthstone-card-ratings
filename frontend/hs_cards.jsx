@@ -10,14 +10,17 @@ document.addEventListener("DOMContentLoaded", () => {
     session: {
       currentUser: undefined,
       signedIn: false
-    }
+    },
+    expansions: {
+      current: undefined,
+      index: []
+    },
+    cards: []
   };
   if (window.currentUser) {
-    preloadedState = {
-      session: {
-        currentUser: window.currentUser.user,
-        signedIn: true
-      }
+    preloadedState.session = {
+      currentUser: window.currentUser.user,
+      signedIn: true
     };
   }
   const store = window.store = configureStore(preloadedState);
