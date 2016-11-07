@@ -3,6 +3,7 @@ import React from 'react';
 import App from './app';
 import SignUpFormContainer from './session/sign_up_form_container.js';
 import SignInFormContainer from './session/sign_in_form_container.js';
+import ExpansionContainer from './expansion/expansion_container.js';
 import { clearErrors } from '../actions/error_actions.js';
 import { requestExpansions } from './../actions/expansion_actions.js';
 import { requestExpansionCards } from './../actions/card_actions.js';
@@ -45,6 +46,7 @@ class AppRouter extends React.Component{
     return (
       <Router history={hashHistory}>
         <Route path="/" component={ App } onEnter={ this._initialFetch }>
+          <IndexRoute component={ ExpansionContainer }></IndexRoute>
           <Route path="signup" component={SignUpFormContainer}
             onEnter={ this._redirectIfLoggedIn }
             onLeave={ this._clearErrorsWhenLeave } />
