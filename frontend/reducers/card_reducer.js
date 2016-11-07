@@ -1,9 +1,9 @@
 import { CardConstants } from '../actions/card_actions.js';
 
-const CardReducer = (state=[], action) => {
+const CardReducer = (state=null, action) => {
   switch (action.type) {
-    case CardConstants.RECEIVE_EXPANSION_CARDS:
-      return action.cards;
+    case CardConstants.RECEIVE_CARD:
+      return action.card;
     default:
       return state;
   }

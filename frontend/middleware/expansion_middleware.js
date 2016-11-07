@@ -5,7 +5,7 @@ import { requestExpansionCards } from '../actions/card_actions.js';
 const ExpansionMiddleware = (store) => (next) => (action) => {
   const fetchSuccess = (expansions) => {
     store.dispatch(receiveExpansions(expansions));
-    store.dispatch(requestExpansionCards(expansions.current));
+    store.dispatch(requestExpansionCards(expansions.current.id));
   };
   switch (action.type) {
     case ExpansionConstants.REQUEST_EXPANSIONS:

@@ -6,4 +6,12 @@ const fetchExpansionCards = (id, success) => {
   });
 };
 
-export { fetchExpansionCards };
+const fetchCard = (id, success) => {
+  $.ajax({
+    url: `/api/cards/${id}.json`,
+    type: 'GET',
+    success
+  });
+};
+
+export { fetchExpansionCards, fetchCard };
