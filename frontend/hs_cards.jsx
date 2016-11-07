@@ -12,11 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
       signedIn: false
     },
     expansions: {
-      current: undefined,
+      current: {id: undefined, title: ''},
       index: []
     },
     cards: [],
-    card: null
+    card: undefined
   };
   if (window.currentUser) {
     preloadedState.session = {
