@@ -4,9 +4,10 @@ import App from './app';
 import SignUpFormContainer from './session/sign_up_form_container.js';
 import SignInFormContainer from './session/sign_in_form_container.js';
 import ExpansionContainer from './expansion/expansion_container.js';
+import CardContainer from './card/card_container.js';
 import { clearErrors } from '../actions/error_actions.js';
 import { requestExpansions } from './../actions/expansion_actions.js';
-import { requestExpansionCards } from './../actions/card_actions.js';
+import { requestExpansionCards, requestCard } from './../actions/card_actions.js';
 
 class AppRouter extends React.Component{
   constructor(props){
@@ -15,6 +16,7 @@ class AppRouter extends React.Component{
     this._clearErrorsWhenLeave = this._clearErrorsWhenLeave.bind(this);
     this._ensureSignedIn = this._ensureSignedIn.bind(this);
     this._initialFetch = this._initialFetch.bind(this);
+    this._fetchCard = this._fetchCard.bind(this);
   }
 
   _initialFetch() {
@@ -42,6 +44,10 @@ class AppRouter extends React.Component{
     }
   }
 
+  _fetchCard(nextState){
+    this.context.store.dispatch(requestCard(nextState.params.id));
+  }
+
   render() {
     return (
       <Router history={hashHistory}>
@@ -53,6 +59,8 @@ class AppRouter extends React.Component{
           <Route path="signin" component={SignInFormContainer}
             onEnter={ this._redirectIfLoggedIn }
             onLeave={ this._clearErrorsWhenLeave } />
+          <Route path="cards/:id" component={CardContainer}
+            onEnter={ this._fetchCard }/>
         </Route>
       </Router>
     );

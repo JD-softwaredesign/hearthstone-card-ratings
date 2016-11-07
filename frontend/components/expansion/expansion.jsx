@@ -7,6 +7,7 @@ class Expansion extends React.Component {
     this.state = {
       current: {title: ""}
     };
+    this.renderCards = this.renderCards.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -15,9 +16,25 @@ class Expansion extends React.Component {
     });
   }
 
+  renderCards() {
+    let cards = [];
+    this.props.cards.forEach((card) => {
+      cards.push(
+        <div key={card.name}>
+          <li>{card.name}</li>
+          <img src={card.image_url}></img>
+        </div>
+      );
+    });
+    return cards;
+  }
+
   render() {
     return (
-      <div>{this.state.current.title}</div>
+      <div>
+        <div>{this.state.current.title}</div>
+        <ul>{this.renderCards()}</ul>
+      </div>
     );
   }
 }

@@ -15,7 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
       current: undefined,
       index: []
     },
-    cards: []
+    cards: [],
+    card: null
   };
   if (window.currentUser) {
     preloadedState.session = {
