@@ -7,8 +7,9 @@ class Card extends React.Component {
   }
 
   render() {
+    const card = this.props.card;
     return (
-      <div>I'm a card</div>
+      <div>{card.name}</div>
     );
   }
 }
