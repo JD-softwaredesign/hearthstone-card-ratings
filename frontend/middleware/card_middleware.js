@@ -3,8 +3,7 @@ import { fetchExpansionCards, fetchCard } from '../util/card_api_util.js';
 
 const CardMiddleware = (store) => (next) => (action) => {
   const fetchCardsSuccess = (cards) => {
-    // because of jbuilder structure, we took cards out of cards Object
-    store.dispatch(receiveExpansionCards(cards.cards));
+    store.dispatch(receiveExpansionCards(cards));
   };
   const fetchCardSuccess = (card) => {
     store.dispatch(receiveCard(card));
