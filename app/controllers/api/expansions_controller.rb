@@ -1,7 +1,7 @@
 class Api::ExpansionsController < ApplicationController
   def index
     @expansions = Expansion.all
-    @current = @expansions[@expansions.length - 1]
+    @current = @expansions.last
     render :index
   end
 
