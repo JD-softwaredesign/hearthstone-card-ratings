@@ -17,7 +17,16 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     cards: [],
     card: {id: undefined,
-           name: ''}
+           name: '',
+           attack: 0,
+           card_text: '',
+           expansion_id: undefined,
+           health: 0,
+           hero_class: '',
+           image_url: '',
+           mana: 0,
+           released: false,
+           tribe: ''}
   };
   if (window.currentUser) {
     preloadedState.session = {

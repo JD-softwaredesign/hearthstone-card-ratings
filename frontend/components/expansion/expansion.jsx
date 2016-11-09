@@ -9,8 +9,9 @@ class Expansion extends React.Component {
   }
 
   renderCards() {
-    return this.props.cards.map((card) => {
-      return <ExpansionIndexItem key={card.name} card={card} />;
+    let cards = this.props.cards;
+    return Object.keys(cards).map((id) => {
+      return <ExpansionIndexItem key={cards[id].name} card={cards[id]} />;
     });
   }
 
