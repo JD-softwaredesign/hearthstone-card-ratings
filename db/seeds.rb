@@ -1,12 +1,12 @@
 Expansion.create!(title: 'Karazhan')
 Expansion.create!(title: 'Mean Streets of Gadgetzan')
 
-one = Card.create!(image_url: 'http://res.cloudinary.com/wkdal720/image/upload/v1473346607/seafood_gvpnfz.jpg', name: 'first', hero_class: 'first', tribe: 'first', mana: 1, attack: 1, health: 1, card_text: 'first', expansion_id: 1, released: false)
+Card.create!(image_url: 'http://imgur.com/uZmUe25.png', name: 'Counterfeit Coun', hero_class: 'Rogue', mana: 0, card_text: 'Gain 1 Mana Crystal this turn only', expansion_id: 2, released: false)
 
-two = Card.create!(image_url: 'http://res.cloudinary.com/wkdal720/image/upload/v1472664911/breakfast_v5z2ti.jpg', name: 'second', hero_class: 'second', tribe: 'second', mana: 2, attack: 2, health: 2, card_text: 'second', expansion_id: 2, released: false)
+Card.create!(image_url: 'http://imgur.com/WDif5QZ.png', name: 'Manic Soulcaster', hero_class: 'Mage', mana: 3, attack: 3, health: 4, card_text: 'Battlecry: Choose a friendly minion. Shuffle a copy into your deck.', expansion_id: 2, released: false)
 
-thr = Card.create!(image_url: 'http://res.cloudinary.com/wkdal720/image/upload/v1472664911/Desserts_r0fabf.jpg', name: 'third', hero_class: 'third', tribe: 'third', mana: 3, attack: 3, health: 3, card_text: 'third', expansion_id: 2, released: false)
+Card.create!(image_url: 'http://imgur.com/VXuJZVI.png', name: 'Kabal Talonpriest', hero_class: 'Priest', mana: 3, attack: 3, health: 4, card_text: 'Battlecry: Give a friendly minion +3 Health.', expansion_id: 2, released: false)
 
-four = Card.create!(image_url: 'http://res.cloudinary.com/wkdal720/image/upload/v1472664912/Maindish_pkxhrw.jpg', name: 'fourth', hero_class: 'fourth', tribe: 'fourth', mana: 4, attack: 4, health: 4, card_text: 'fourth', expansion_id: 1, released: false)
+Card.create!(image_url: 'http://imgur.com/MEEfJnn.png', name: 'Auctionmaster Beardo', hero_class: 'Neutral', mana: 3, attack: 3, health: 4, card_text: 'After you cast a spell, refresh your Hero Power.', expansion_id: 2, released: false)
 
-five = Card.create!(image_url: 'http://res.cloudinary.com/wkdal720/image/upload/v1472664911/Appetizers_rw1fgb.jpg', name: 'fifth', hero_class: 'fifth', tribe: 'fifth', mana: 5, attack: 5, health: 5, card_text: 'fifth', expansion_id: 1, released: false)
+Card.create!(image_url: 'http://imgur.com/PeSpPR9.png', name: 'Small-Time Recruits', hero_class: 'Paladin', mana: 3, card_text: 'Draw three 1-Cost minions from your deck', expansion_id: 2, released: false)
