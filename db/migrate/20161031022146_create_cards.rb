@@ -6,8 +6,8 @@ class CreateCards < ActiveRecord::Migration
       t.string :hero_class, null: false
       t.string :tribe
       t.integer :mana, null: false
-      t.integer :attack, null: false
-      t.integer :health, null: false
+      t.integer :attack
+      t.integer :health
       t.text :card_text
       t.integer :expansion_id, null: false
       t.boolean :released, null: false
