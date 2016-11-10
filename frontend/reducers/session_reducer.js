@@ -1,17 +1,12 @@
 import { SessionConstants } from '../actions/session_actions.js';
 import merge from 'lodash/merge';
 
-const defaultState = {
-  currentUser: null,
-  signedIn: false
-};
-
-const SessionReducer = (state = defaultState, action) => {
+const SessionReducer = (state = {}, action) => {
   switch (action.type) {
     case SessionConstants.RECEIVE_CURRENT_USER:
-      return merge({}, state, {currentUser: action.user, signedIn: true});
+      return action.user;
     case SessionConstants.SIGN_OUT:
-      return {currentUser: null, signedIn: false};
+      return {username: undefined, ratings: {}};
     default:
       return state;
   }
