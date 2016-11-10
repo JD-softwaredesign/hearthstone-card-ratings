@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { signIn } from '../../actions/session_actions.js';
 
 const mapStateToProps = (state) => ({
-  signedIn: state.session.signedIn,
+  username: state.session.username,
   errors: state.errors
 });
 

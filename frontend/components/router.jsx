@@ -27,8 +27,7 @@ class AppRouter extends React.Component{
   }
 
   _redirectIfLoggedIn(nextState, replace){
-    const currentUser = this.context.store.getState().session.currentUser;
-    if (currentUser) {
+    if (this.context.store.getState().session.username) {
       replace('/');
     }
   }
@@ -38,9 +37,7 @@ class AppRouter extends React.Component{
   }
 
   _ensureSignedIn(nextState, replace){
-    const currentState = this.context.store.getState();
-    const currentUser = currentState.session.currentUser;
-    if (currentUser === undefined) {
+    if (!this.context.store.getState().session.username) {
       replace('/signin');
     }
   }

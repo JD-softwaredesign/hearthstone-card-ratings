@@ -22,7 +22,7 @@ class SignInForm extends React.Component {
 
   componentWillReceiveProps(props) {
     // when user is signed in, redirect to home
-    if (props.signedIn) {
+    if (props.username) {
       this.props.router.push('/');
     }
     this.render();

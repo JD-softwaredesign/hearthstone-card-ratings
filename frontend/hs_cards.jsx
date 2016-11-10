@@ -8,8 +8,8 @@ import { SessionConstants, signOut } from './actions/session_actions.js';
 document.addEventListener("DOMContentLoaded", () => {
   let preloadedState = {
     session: {
-      currentUser: undefined,
-      signedIn: false
+      username: undefined,
+      ratings: {}
     },
     expansions: {
       current: {id: undefined, title: ''},
@@ -29,10 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
            tribe: ''}
   };
   if (window.currentUser) {
-    preloadedState.session = {
-      currentUser: window.currentUser.user,
-      signedIn: true
-    };
+    preloadedState.session = window.currentUser.user;
   }
   const store = window.store = configureStore(preloadedState);
 
