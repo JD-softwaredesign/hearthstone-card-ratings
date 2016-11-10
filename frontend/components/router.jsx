@@ -20,8 +20,9 @@ class AppRouter extends React.Component{
   }
 
   _initialFetch() {
-    if (!this.context.store.getState().expansions.index.length) {
-      this.context.store.dispatch(requestExpansions());
+    let store = this.context.store;
+    if (!store.getState().expansions.index.length) {
+      store.dispatch(requestExpansions());
     }
   }
 
@@ -39,12 +40,13 @@ class AppRouter extends React.Component{
   _ensureSignedIn(nextState, replace){
     const currentState = this.context.store.getState();
     const currentUser = currentState.session.currentUser;
-    if (!currentUser) {
+    if (currentUser === undefined) {
       replace('/signin');
     }
   }
 
-  _fetchCard(nextState){
+  _fetchCard(nextState, replace){
+    this._ensureSignedIn(nextState, replace);
     this.context.store.dispatch(requestCard(nextState.params.id));
   }
 
@@ -52,14 +54,15 @@ class AppRouter extends React.Component{
     return (
       <Router history={hashHistory}>
         <Route path="/" component={ App } onEnter={ this._initialFetch }>
-          <IndexRoute component={ ExpansionContainer }></IndexRoute>
+          <IndexRoute component={ ExpansionContainer }
+            onEnter={ this._ensureSignedIn }></IndexRoute>
           <Route path="signup" component={SignUpFormContainer}
             onEnter={ this._redirectIfLoggedIn }
             onLeave={ this._clearErrorsWhenLeave } />
           <Route path="signin" component={SignInFormContainer}
             onEnter={ this._redirectIfLoggedIn }
             onLeave={ this._clearErrorsWhenLeave } />
-          <Route path="cards/:id" component={CardContainer}
+          <Route path="cards/:id" component={ CardContainer }
             onEnter={ this._fetchCard }/>
         </Route>
       </Router>
