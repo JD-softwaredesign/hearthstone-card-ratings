@@ -2,8 +2,14 @@ const SessionConstants = {
   SIGN_IN: "SIGN_IN",
   SIGN_UP: "SIGN_UP",
   SIGN_OUT: "SIGN_OUT",
-  RECEIVE_CURRENT_USER: "RECEIVE_CURRENT_USER"
+  RECEIVE_CURRENT_USER: "RECEIVE_CURRENT_USER",
+  RECEIVE_RATING: "RECEIVE_RATING"
 };
+
+const receiveRating = (rating) => ({
+  type: SessionConstants.RECEIVE_RATING,
+  rating
+});
 
 const signIn = (user) => ({
   type: SessionConstants.SIGN_IN,
@@ -24,5 +30,4 @@ const receiveCurrentUser = (user) => ({
   user
 });
 
-export { SessionConstants, signIn, signUp, signOut,
-        receiveCurrentUser };
+export { SessionConstants, receiveRating, signIn, signUp, signOut, receiveCurrentUser };

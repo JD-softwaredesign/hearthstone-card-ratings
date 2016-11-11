@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
   def ratings
     data = {}
     rates.each do |rate|
-      data[rate.card_id] = rate.rating
+      data[rate.card_id] = { rating: rate.rating, rating_id: rate.id }
     end
     data
   end

@@ -8,8 +8,9 @@ class Expansion extends React.Component {
     this.renderCards = this.renderCards.bind(this);
   }
 
-  renderCards() {
-    return this.props.cards.map((card) => {
+  // take cards array for filters
+  renderCards(cards) {
+    return cards.map((card) => {
       return <ExpansionIndexItem key={card.name} card={card} />;
     });
   }
@@ -18,7 +19,7 @@ class Expansion extends React.Component {
     return (
       <div>
         <div>{this.props.current.title}</div>
-        <ul>{this.renderCards()}</ul>
+        <ul>{this.renderCards(this.props.cards)}</ul>
       </div>
     );
   }

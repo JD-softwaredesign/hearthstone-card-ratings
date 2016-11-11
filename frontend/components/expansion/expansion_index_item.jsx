@@ -7,7 +7,6 @@ const ExpansionIndexItem = ({card, router}) => {
   };
 
   return <div onClick={ goToCardDetail }>
-    <li>{card.name}</li>
     <img src={card.image_url}></img>
   </div>;
 };
