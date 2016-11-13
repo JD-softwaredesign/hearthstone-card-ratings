@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let preloadedState = {
     session: {
       username: undefined,
-      ratings: {}
+      ratings: {},
+      id: undefined
     },
     expansions: {
       current: {id: undefined, title: ''},

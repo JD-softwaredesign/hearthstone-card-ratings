@@ -7,6 +7,11 @@ const SessionReducer = (state = {}, action) => {
       return action.user;
     case SessionConstants.SIGN_OUT:
       return {username: undefined, ratings: {}};
+    case SessionConstants.RECEIVE_RATING:
+      let newState = merge({}, state);
+      let key = Object.keys(action.rating)[0];
+      newState.ratings[key] = action.rating[key];
+      return newState;
     default:
       return state;
   }
