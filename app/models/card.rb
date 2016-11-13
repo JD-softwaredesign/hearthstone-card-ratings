@@ -19,4 +19,5 @@
 class Card < ActiveRecord::Base
   belongs_to :expansion
   has_many :ratings, dependent: :destroy
+  has_many :comments, dependent: :destroy
 end

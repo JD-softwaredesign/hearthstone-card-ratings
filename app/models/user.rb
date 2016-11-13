@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
     dependent: :destroy
 
   has_many :rated_cards, through: :ratings, source: :card
+  has_many :comments, dependent: :destroy
   attr_reader :password
 
   def ratings
