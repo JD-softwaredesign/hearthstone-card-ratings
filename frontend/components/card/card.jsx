@@ -8,12 +8,13 @@ class Card extends React.Component {
   }
 
   render() {
-    const { card, receiveRating, userId } = this.props;
+    const { card, receiveRating, ratings, userId } = this.props;
     return (
       <div>
         <img src={card.image_url}></img>
-        <Rating card={card}
-          receiveRating={ this.props.receiveRating }
+        <Rating card={ card }
+          receiveRating={ receiveRating }
+          rating={ ratings[card.id] }
           userId={ userId } />
       </div>
     );
