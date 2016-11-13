@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root 'static_pages#root'
   namespace :api, defaults: { format: :json } do
     resource :session, only: [:create, :destroy]
-    resources :users, only: [:create, :update]
+    resources :users, only: [:create, :show]
     resources :expansions, only: [:index, :show]
     resources :cards, only: [:show]
     post 'rating' => 'ratings#rate'

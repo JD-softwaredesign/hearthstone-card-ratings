@@ -15,19 +15,14 @@ class User < ActiveRecord::Base
   validates :username, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
   after_initialize :ensure_session_token
-  has_many :rates,
-    primary_key: :id,
-    foreign_key: :user_id,
-    class_name: :Rating,
-    dependent: :destroy
-
+  has_many :ratings
   has_many :rated_cards, through: :ratings, source: :card
   attr_reader :password
 
-  def ratings
+  def user_ratings
     data = {}
-    rates.each do |rate|
-      data[rate.card_id] = rate.rating
+    ratings.each do |rating|
+      data[rating.card_id] = rating.rating
     end
     data
   end
