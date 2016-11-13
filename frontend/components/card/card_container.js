@@ -5,6 +5,7 @@ import { receiveRating } from './../../actions/session_actions.js';
 const mapStateToProps = (state) => ({
   card: state.card,
   userId: state.session.id,
+  ratings: state.session.ratings
 });
 
 const mapDispatchToProps = (dispatch) => ({
