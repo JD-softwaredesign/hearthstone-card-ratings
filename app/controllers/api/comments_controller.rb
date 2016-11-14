@@ -2,7 +2,7 @@ class Api::CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      render :show
+      render json: {comment: @comment.comment, username: @comment.user.username}
     else
       @errors = @comment.errors
       render './errors', status: 400

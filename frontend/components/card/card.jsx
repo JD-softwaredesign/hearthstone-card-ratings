@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import Rating from './rating.jsx';
+import CommentsContainer from '../comment/comments_container.js';
+import CommentFormContainer from '../comment/comment_form_container.js';
 
 class Card extends React.Component {
   constructor(props) {
@@ -15,6 +17,8 @@ class Card extends React.Component {
         <Rating card={card}
           receiveRating={ this.props.receiveRating }
           userId={ userId } />
+        <CommentsContainer />
+        <CommentFormContainer />
       </div>
     );
   }
