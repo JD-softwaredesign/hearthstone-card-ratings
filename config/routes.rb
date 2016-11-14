@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :update]
     resources :expansions, only: [:index, :show]
     resources :cards, only: [:show]
+    resources :comments, only: [:index, :create, :destroy]
     post 'rating' => 'ratings#rate'
   end
   # Example of regular route:

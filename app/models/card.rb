@@ -19,4 +19,13 @@
 class Card < ActiveRecord::Base
   belongs_to :expansion
   has_many :ratings, dependent: :destroy
+  has_many :comments, dependent: :destroy
+
+  def card_comments
+    data = []
+    comments.each do |comment|
+      data.push({ comment: comment.comment, username: comment.user.username })
+    end
+    data
+  end
 end

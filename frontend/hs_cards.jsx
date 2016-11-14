@@ -27,7 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
            image_url: '',
            mana: 0,
            released: false,
-           tribe: ''}
+           tribe: '',
+           card_comments: []}
   };
   if (window.currentUser) {
     preloadedState.session = window.currentUser.user;

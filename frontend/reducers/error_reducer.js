@@ -1,5 +1,4 @@
 import { ErrorConstants } from '../actions/error_actions.js';
-import merge from 'lodash/merge';
 
 const ErrorReducer = (state = {}, action) => {
   switch (action.type) {
