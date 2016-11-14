@@ -10,8 +10,14 @@ class Expansion extends React.Component {
 
   // take cards array for filters
   renderCards(cards) {
+    const { receiveRating, user_ratings, userId } = this.props;
     return cards.map((card) => {
-      return <ExpansionIndexItem key={card.name} card={card} />;
+      return <ExpansionIndexItem
+        key={card.name}
+        card={ card }
+        receiveRating={ receiveRating }
+        rating={ user_ratings[card.id] }
+        userId={ userId } />;
     });
   }
 

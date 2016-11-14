@@ -1,1 +1,1 @@
-json.user user, :id, :username, :ratings
+json.user user, :id, :username, :user_ratings
