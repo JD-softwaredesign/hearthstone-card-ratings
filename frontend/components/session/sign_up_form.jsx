@@ -68,8 +68,8 @@ class SignUpForm extends React.Component {
             onChange={this.handleInput}
             placeholder="Password Confirmation"
             value={ confirmation }/>
-          <p className='error'>
-            { password !==  confirmation ? "The password confirmation doesn't match with password." : ""}
+          <p className={ password !== confirmation ? 'error' : 'hidden'}>
+            Password confirmation doesn't match password.
           </p>
 
           <button disabled={ password === '' || password !== confirmation }
