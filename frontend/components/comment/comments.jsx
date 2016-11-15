@@ -1,11 +1,9 @@
 import React from 'react';
-import { withRouter } from 'react-router';
 import Comment from './comment.jsx';
 
 class Comments extends React.Component {
   constructor(props) {
     super(props);
-    this.commentsList = this.commentsList.bind(this);
   }
 
   commentsList () {
@@ -15,12 +13,8 @@ class Comments extends React.Component {
   }
 
   render() {
-    return (
-      <ul>
-        {this.commentsList()}
-      </ul>
-    );
+    return <ul> { this.commentsList() } </ul>;
   }
 }
 
-export default withRouter(Comments);
+export default Comments;

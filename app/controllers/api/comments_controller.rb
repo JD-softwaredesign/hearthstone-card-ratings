@@ -2,7 +2,7 @@ class Api::CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      render json: {comment: @comment.comment, username: @comment.user.username}
+      render :show
     else
       @errors = @comment.errors
       render './errors', status: 400
@@ -13,7 +13,7 @@ class Api::CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     if @comment
       @comment.destroy
-      render json: {}
+      render :show
     else
       @errors = { comment: ['not found'] }
       render './errors', status: 404

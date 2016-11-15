@@ -6,7 +6,7 @@ const CommentMiddleware = (store) => (next) => (action) => {
     store.dispatch(receiveCardComment(comment));
   };
   switch (action.type) {
-    case CommentConstants.CREATE_CARD_COMMENT:
+    case CommentConstants.NEW_CARD_COMMENT:
       createCardComment(action.comment, createCommentSuccess);
       break;
     default:
