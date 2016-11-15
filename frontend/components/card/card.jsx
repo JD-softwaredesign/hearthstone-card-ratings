@@ -1,6 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router';
-import Rating from './rating.jsx';
+import RatingContainer from './rating_container.js';
 import CommentsContainer from '../comment/comments_container.js';
 import CommentFormContainer from '../comment/comment_form_container.js';
 
@@ -10,14 +9,10 @@ class Card extends React.Component {
   }
 
   render() {
-    const { card, receiveRating, user_ratings, userId } = this.props;
     return (
       <div>
-        <img src={card.image_url}></img>
-        <Rating card={ card }
-          receiveRating={ receiveRating }
-          rating={ user_ratings[card.id] }
-          userId={ userId } />
+        <img src={ this.props.card.image_url }></img>
+        <RatingContainer />
         <CommentsContainer />
         <CommentFormContainer />
       </div>
@@ -25,4 +20,4 @@ class Card extends React.Component {
   }
 }
 
-export default withRouter(Card);
+export default Card;

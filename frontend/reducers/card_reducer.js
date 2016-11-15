@@ -8,7 +8,7 @@ const CardReducer = (state=null, action) => {
       return action.card;
     case CommentConstants.RECEIVE_CARD_COMMENT:
       let newState = merge({}, state);
-      newState['card_comments'].push(action.comment);
+      newState.card_comments.push(action.comment);
       return newState;
     default:
       return state;
