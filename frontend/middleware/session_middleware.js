@@ -22,7 +22,7 @@ const SessionMiddleware = (store) => (next) => (action) => {
       window.currentUser = undefined;
       SessionUtil.signOut(() => {
         store.dispatch(clearErrors());
-        hashHistory.push('/');
+        hashHistory.push('/signin');
         next(action);
       });
       break;

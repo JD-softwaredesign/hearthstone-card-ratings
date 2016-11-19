@@ -10,8 +10,8 @@ class Card extends React.Component {
 
   render() {
     return (
-      <div>
-        <img src={ this.props.card.image_url }></img>
+      <div className='container-fluid'>
+        <img className='img-responsive' src={ this.props.card.image_url }></img>
         <RatingContainer />
         <CommentsContainer />
         <CommentFormContainer />
