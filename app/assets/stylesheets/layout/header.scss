@@ -1,0 +1,37 @@
+header {
+  display: flex;
+  background-color: $header_background;
+  justify-content: space-between;
+  color: #FFF;
+  align-items: center;
+}
+
+.logo {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+  font-size: 36px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo > img {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.user-nav {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+}
+
+.user-nav > * {
+  margin: 10px;
+  cursor: pointer;
+}
+
+.user-nav > *:hover, .logo:hover {
+  color: #DFE2DB;
+}

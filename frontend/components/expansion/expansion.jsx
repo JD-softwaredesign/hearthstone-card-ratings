@@ -19,7 +19,6 @@ class Expansion extends React.Component {
     return (
       <div>
         <div>{this.props.current.title}</div>
-        <button></button>
         <ul>{this.renderCards(this.props.cards)}</ul>
       </div>
     );

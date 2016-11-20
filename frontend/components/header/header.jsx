@@ -7,27 +7,29 @@ class Header extends React.Component {
   }
 
   homeLink() {
-    this.props.router.push('/');
-  }
-
-  signOutHandler() {
-    this.props.signOut(() => this.props.router.push('/signin'));
-  }
-
-  showButton() {
-    if (this.props.username !== undefined) {
-      return <button onClick={ this.signOutHandler.bind(this) }>
-        Logout</button>;
+    if (this.props.location.pathname !== '/') {
+      this.props.router.push('/');
     }
   }
 
   render () {
-    return (
-      <header>
-        <h1 onClick={ this.homeLink.bind(this) }>Home</h1>
-        { this.showButton() }
-      </header>
-    );
+    if (['/signin', '/signup'].includes(this.props.location.pathname)) {
+      return <div></div>;
+    } else {
+      return (
+        <header>
+          <div className='logo'
+            onClick={ this.homeLink.bind(this) }>
+            <img src="http://i.imgur.com/nmRzqIk.png"></img>
+            <h1>ProjectName</h1>
+          </div>
+          <div className='user-nav'>
+            <div>{ this.props.username }</div>
+            <Link onClick={ this.props.signOut }>Logout</Link>
+          </div>
+        </header>
+      );
+    }
   }
 }
 
