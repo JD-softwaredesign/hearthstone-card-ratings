@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       id: undefined
     },
     expansions: {
-      current: {id: undefined, title: ''},
+      current: {id: undefined, title: '', image_url: ''},
       index: []
     },
     cards: [],
