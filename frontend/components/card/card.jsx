@@ -15,8 +15,7 @@ class Card extends React.Component {
           <img src={ this.props.card.image_url }></img>
           <RatingContainer />
         </div>
-        <div className='comments'>
-          <h1>Comments</h1>
+        <div className='comments_container'>
           <CommentsContainer />
           <CommentFormContainer />
         </div>

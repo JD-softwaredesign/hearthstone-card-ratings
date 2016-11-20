@@ -31,7 +31,7 @@ class Rating extends React.Component {
   }
 
   render() {
-    return <div>
+    return <div className='rating'>
       { this.renderStars() }
     </div>;
   }
