@@ -23,13 +23,10 @@ class Rating extends React.Component {
     let currentCard = indexCard ? indexCard : card;
     let rating = ratings[currentCard.id];
     return stars.map((star) => {
-      return <div style={{width: '50px', height: '50px',
-        border: 'solid black 1px', borderRadius: '50%',
-        display: 'inline-block',
-        backgroundColor: star <= (rating || 0) ? 'yellow' : ""}}
+      return <div style={{color: star <= (rating || 0) ? 'rgb(255, 180, 0)' : ""}}
         key={currentCard.name + star}
         className="star"
-        onClick={ () => this.rateCard(star) }></div>;
+        onClick={ () => this.rateCard(star) }>★</div>;
     });
   }
 
