@@ -1,0 +1,34 @@
+.expansion_img {
+  height: 20vh;
+  display: none;
+}
+
+.cards_list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.index_card {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+}
+
+.index_card img {
+  height: 35vh;
+  cursor: pointer;
+}
+
+.index_card .rating {
+  margin-bottom: 0px;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+}
+
+.index_card .star {
+  font-size: 3vh;
+  margin: 0 5px;
+}
