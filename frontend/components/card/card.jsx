@@ -10,11 +10,15 @@ class Card extends React.Component {
 
   render() {
     return (
-      <div>
-        <img src={ this.props.card.image_url }></img>
-        <RatingContainer />
-        <CommentsContainer />
-        <CommentFormContainer />
+      <div className = 'card_container'>
+        <div className='card'>
+          <img src={ this.props.card.image_url }></img>
+          <RatingContainer />
+        </div>
+        <div className='comments_container'>
+          <CommentsContainer />
+          <CommentFormContainer />
+        </div>
       </div>
     );
   }

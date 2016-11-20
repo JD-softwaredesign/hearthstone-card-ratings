@@ -18,7 +18,7 @@ class Expansion extends React.Component {
   render() {
     return (
       <div>
-        <div>{this.props.current.title}</div>
+        <img src={this.props.current.image_url}></img>
         <ul>{this.renderCards(this.props.cards)}</ul>
       </div>
     );

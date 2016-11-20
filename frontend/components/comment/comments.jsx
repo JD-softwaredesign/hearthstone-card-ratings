@@ -13,7 +13,10 @@ class Comments extends React.Component {
   }
 
   render() {
-    return <ul> { this.commentsList() } </ul>;
+    return <div className='comments'>
+      <h1>Comments</h1>
+      <ul className='comment-list'> { this.commentsList() } </ul>
+    </div>;
   }
 }
 
