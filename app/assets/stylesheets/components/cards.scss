@@ -4,31 +4,32 @@
 }
 
 .cards_list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 20px;
+  margin-left: 5vw;
+  width: 88vw;
+  margin-top: 5vh;
 }
 
 .index_card {
-  display: flex;
+  width: 22vw;
+  display: inline-flex;
   flex-direction: column;
-  margin: 0 10px;
 }
 
 .index_card img {
-  height: 35vh;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
   cursor: pointer;
 }
 
 .index_card .rating {
-  margin-bottom: 0px;
+  margin-bottom: 20px;
   height: 5vh;
   display: flex;
   justify-content: center;
 }
 
 .index_card .star {
-  font-size: 3vh;
+  font-size: 2vw;
   margin: 0 5px;
 }
