@@ -7,7 +7,7 @@ const ExpansionIndexItem = ({card, router}) => {
     router.push(`/cards/${card.id}`);
   };
 
-  return <div>
+  return <div className='index_card'>
     <img src={card.image_url} onClick={ goToCardDetail }></img>
     <RatingContainer indexCard={ card }/>
   </div>;
