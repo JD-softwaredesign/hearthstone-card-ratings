@@ -21,7 +21,7 @@ class Header extends React.Component {
           <div className='logo'
             onClick={ this.homeLink.bind(this) }>
             <img src="http://i.imgur.com/nmRzqIk.png"></img>
-            <h1>ProjectName</h1>
+            <h1>HearthCard Ratings</h1>
           </div>
           <div className='user-nav'>
             <div>{ this.props.username }</div>

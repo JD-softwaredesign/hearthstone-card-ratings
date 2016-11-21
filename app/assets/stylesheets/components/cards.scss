@@ -4,31 +4,100 @@
 }
 
 .cards_list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 20px;
+  margin-left: 5vw;
+  width: 88vw;
+  margin-top: 5vh;
 }
 
 .index_card {
-  display: flex;
+  width: 22vw;
+  display: inline-flex;
   flex-direction: column;
-  margin: 0 10px;
 }
 
 .index_card img {
-  height: 35vh;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
   cursor: pointer;
 }
 
 .index_card .rating {
-  margin-bottom: 0px;
+  margin-bottom: 20px;
   height: 5vh;
   display: flex;
   justify-content: center;
 }
 
 .index_card .star {
-  font-size: 3vh;
+  font-size: 2vw;
   margin: 0 5px;
+}
+
+.crystal {
+  width: 5vh;
+  height: 5vh;
+  cursor: pointer;
+  padding: 5px;
+  border: 2px solid $app-background;
+  background-image: url('http://i.imgur.com/FYg4SNY.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #FFF;
+  font-size: 3vh;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  text-shadow: 2px 2px 2px #000;
+}
+
+.selected {
+  border: 2px solid gold;
+  background-color: gold;
+  border-radius: 5px;
+}
+
+.hero_class_img {
+  border: 2px solid $app-background;
+  display: inline;
+  width: 8vh;
+  height: 8vh;
+  cursor: pointer;
+}
+
+.filters {
+  margin: 5px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.filters > form {
+  margin-bottom: 10px;
+}
+
+.filters label {
+  margin: 20px;
+  margin-left: 0;
+}
+
+.filters input {
+  margin: 5px;
+}
+
+.rated_filter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.rated_filter > button {
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.rated_filter > button:hover {
+  background: #A7A7A7;
 }
