@@ -4,9 +4,9 @@
 #
 #  id         :integer          not null, primary key
 #  title      :string           not null
-#  release    :date             not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  image_url  :string
 #
 
 require 'test_helper'
