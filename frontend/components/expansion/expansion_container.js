@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => ({
   current: state.expansions.current,
-  cards: state.cards
+  cards: state.cards,
+  user_ratings: state.session.user_ratings
 });
 
 const mapDispatchToProps = (dispatch) => ({

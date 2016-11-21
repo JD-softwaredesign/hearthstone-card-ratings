@@ -64,12 +64,12 @@
 }
 
 .comments_container button:hover {
-  
+
 }
 
 .star {
   display: inline-block;
-  font-size: 40px;
+  font-size: 6vh;
   cursor: pointer;
   margin: 0px 10px;
 }
@@ -85,4 +85,9 @@
 
 .comments_container > form {
   margin: auto 0;
+}
+
+.rating {
+  display: flex;
+  flex-wrap: nowrap;
 }
