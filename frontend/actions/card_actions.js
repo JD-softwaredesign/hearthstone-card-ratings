@@ -2,7 +2,8 @@ const CardConstants = {
   REQUEST_EXPANSION_CARDS: "REQUEST_EXPANSION_CARDS",
   RECEIVE_EXPANSION_CARDS: "RECEIVE_EXPANSION_CARDS",
   REQUEST_CARD: "REQUEST_CARD",
-  RECEIVE_CARD: "RECEIVE_CARD"
+  RECEIVE_CARD: "RECEIVE_CARD",
+  CLEAR_CARD: "CLEAR_CARD"
 };
 
 const requestExpansionCards = (id) => ({
@@ -25,4 +26,8 @@ const receiveCard = (card) => ({
   card
 });
 
-export { CardConstants, requestExpansionCards, requestCard, receiveExpansionCards, receiveCard };
+const clearCard = () => ({
+  type: CardConstants.CLEAR_CARD
+});
+
+export { CardConstants, requestExpansionCards, requestCard, receiveExpansionCards, receiveCard, clearCard };

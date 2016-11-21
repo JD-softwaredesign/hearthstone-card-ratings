@@ -7,7 +7,7 @@ import ExpansionContainer from './expansion/expansion_container.js';
 import CardContainer from './card/card_container.js';
 import { clearErrors } from '../actions/error_actions.js';
 import { requestExpansions } from './../actions/expansion_actions.js';
-import { requestExpansionCards, requestCard } from './../actions/card_actions.js';
+import { requestExpansionCards, requestCard, clearCard } from './../actions/card_actions.js';
 
 class AppRouter extends React.Component{
   constructor(props){
@@ -17,6 +17,7 @@ class AppRouter extends React.Component{
     this._ensureSignedIn = this._ensureSignedIn.bind(this);
     this._initialFetch = this._initialFetch.bind(this);
     this._fetchCard = this._fetchCard.bind(this);
+    this._clearCard = this._clearCard.bind(this);
   }
 
   _initialFetch() {
@@ -47,6 +48,10 @@ class AppRouter extends React.Component{
     this.context.store.dispatch(requestCard(nextState.params.id));
   }
 
+  _clearCard(){
+    this.context.store.dispatch(clearCard());
+  }
+
   render() {
     return (
       <Router history={hashHistory}>
@@ -60,7 +65,8 @@ class AppRouter extends React.Component{
             onEnter={ this._redirectIfLoggedIn }
             onLeave={ this._clearErrorsWhenLeave } />
           <Route path="cards/:id" component={ CardContainer }
-            onEnter={ this._fetchCard }/>
+            onEnter={ this._fetchCard }
+            onLeave={ this._clearCard }/>
         </Route>
       </Router>
     );
