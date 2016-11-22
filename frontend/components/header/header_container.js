@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { signOut } from './../../actions/session_actions.js';
 
 const mapStateToProps = (state) => ({
-  username: state.session.username
+  username: state.session.username,
+  userId: state.session.id
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-import { SessionConstants, signOut } from './actions/session_actions.js';
-
 document.addEventListener("DOMContentLoaded", () => {
   let preloadedState = {
     session: {
@@ -34,12 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
     preloadedState.session = window.currentUser.user;
   }
   const store = window.store = configureStore(preloadedState);
-
-  // this is for testing
-  window.signOut = () => {
-    store.dispatch(signOut());
-  };
-
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store}/>, root);

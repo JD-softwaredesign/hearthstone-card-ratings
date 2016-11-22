@@ -11,7 +11,7 @@ const RootReducer = combineReducers({
   errors: ErrorReducer,
   expansions: ExpansionReducer,
   cards: CardsReducer,
-  card: CardReducer,
+  card: CardReducer
 });
 
 export default RootReducer;
