@@ -13,3 +13,11 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
+.card_link {
+  cursor: pointer;
+}
+
+.card_link:hover {
+  text-decoration: underline;
+}

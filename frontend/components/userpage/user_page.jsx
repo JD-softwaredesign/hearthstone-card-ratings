@@ -33,12 +33,16 @@ class UserPage extends React.Component {
     }
   }
 
+  goToCard(id) {
+    this.props.router.push(`/cards/${id}`);
+  }
+
   renderRatings() {
     let user = this.state;
     let rated = this.props.cards.filter((card) => user.user_ratings[card.id]);
     return rated.map((card) => {
       return <li key={card.name}>
-        <p>{card.name}</p>
+        <p className="card_link" onClick={ this.goToCard.bind(this, card.id) }>{card.name}</p>
         <p>{user.user_ratings[card.id]}</p>
       </li>;
     });
