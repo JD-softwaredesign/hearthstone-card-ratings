@@ -31,7 +31,7 @@ class CommentForm extends React.Component {
           name='comment'
           placeholder="Write your comment here"
           onChange={ this.handleInput.bind(this) }/>
-        <button disabled={ this.state.comment === "" }>+</button>
+        <button className="add" disabled={ this.state.comment === "" }>+</button>
       </form>
     );
   }

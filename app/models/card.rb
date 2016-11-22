@@ -25,7 +25,11 @@ class Card < ActiveRecord::Base
   def card_comments
     data = []
     comments.each do |comment|
-      data.push({ comment: comment.comment, username: comment.user.username })
+      data.push(
+        id: comment.id,
+        comment: comment.comment,
+        username: comment.user.username
+      )
     end
     data
   end

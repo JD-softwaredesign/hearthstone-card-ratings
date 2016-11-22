@@ -44,25 +44,46 @@
   margin-right: 15px;
 }
 
-.comment {
+.comment_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   margin-bottom: 10px;
+}
+
+.comment {
   width: 100%;
   word-wrap: break-word;
   padding-right: 10px;
   box-sizing: border-box;
 }
 
-.comments_container button {
+.comment_container > .delete {
+  cursor: pointer;
+  color: red;
+  background: none;
+  padding: 0 10px;
+}
+
+.comment_container > .delete:active {
+  border: none;
+}
+
+.hide {
+  display: none;
+}
+
+.comments_container .add {
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.comments_container button:disabled {
+.comments_container .add:disabled {
   cursor: default;
 }
 
-.comments_container button:hover {
+.comments_container .add:hover {
   background: #A7A7A7;
 }
 

@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
            mana: 0,
            released: false,
            tribe: '',
+           rarity: '',
            card_comments: []}
   };
   if (window.currentUser) {
