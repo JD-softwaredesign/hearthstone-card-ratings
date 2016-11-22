@@ -1,5 +1,5 @@
 import React from 'react';
-import Comment from './comment.jsx';
+import CommentContainer from './comment_container.js';
 
 class Comments extends React.Component {
   constructor(props) {
@@ -8,7 +8,7 @@ class Comments extends React.Component {
 
   commentsList () {
     return this.props.comments.map((comment, idx) => {
-      return <Comment key={comment.comment + idx} comment={comment}/>;
+      return <CommentContainer key={comment.comment + idx} comment={comment}/>;
     });
   }
 
