@@ -8,6 +8,7 @@ import CardContainer from './card/card_container.js';
 import { clearErrors } from '../actions/error_actions.js';
 import { requestExpansions } from './../actions/expansion_actions.js';
 import { requestExpansionCards, requestCard, clearCard } from './../actions/card_actions.js';
+import UserPageContainer from './userpage/user_page_container.js';
 
 class AppRouter extends React.Component{
   constructor(props){
@@ -67,6 +68,7 @@ class AppRouter extends React.Component{
           <Route path="cards/:id" component={ CardContainer }
             onEnter={ this._fetchCard }
             onLeave={ this._clearCard }/>
+          <Route path=":id" component={ UserPageContainer }/>
         </Route>
       </Router>
     );

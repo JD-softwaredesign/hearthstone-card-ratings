@@ -12,6 +12,10 @@ class Header extends React.Component {
     }
   }
 
+  userPageLink() {
+    this.props.router.push(`/${this.props.userId}`);
+  }
+
   render () {
     if (['/signin', '/signup'].includes(this.props.location.pathname)) {
       return <div></div>;
@@ -24,7 +28,7 @@ class Header extends React.Component {
             <h1>HearthCard Ratings</h1>
           </div>
           <div className='user-nav'>
-            <div>{ this.props.username }</div>
+            <div onClick={ this.userPageLink.bind(this) }>{ this.props.username }</div>
             <Link onClick={ this.props.signOut }>Logout</Link>
           </div>
         </header>

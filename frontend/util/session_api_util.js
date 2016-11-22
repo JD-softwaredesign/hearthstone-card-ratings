@@ -26,4 +26,13 @@ const signOut = (success) => {
   });
 };
 
-export { signIn, signOut, signUp };
+const fetchUser = (id, success, error) => {
+  $.ajax({
+    url: `/api/users/${id}.json`,
+    type: 'GET',
+    success,
+    error
+  });
+};
+
+export { signIn, signOut, signUp, fetchUser };

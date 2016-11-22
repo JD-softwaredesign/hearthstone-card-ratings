@@ -29,12 +29,9 @@ header {
 
 .user-nav > * {
   margin: 10px;
-}
-
-.user-nav > a {
   cursor: pointer;
 }
 
-.user-nav > a:hover, .logo:hover {
+.user-nav > *:hover, .logo:hover {
   color: #DFE2DB;
 }
