@@ -9,7 +9,7 @@ class Rating extends React.Component {
   }
 
   rateCard(newRating) {
-    const { card, userId, indexCard } = this.props;
+    const { card, indexCard } = this.props;
     let currentCard = card.id ? card : indexCard;
     if (currentCard.released) {
       return;
@@ -17,7 +17,7 @@ class Rating extends React.Component {
     let success = (res) => {
       this.props.receiveRating(res);
     };
-    sendRating(currentCard.id, newRating, userId, success);
+    sendRating(currentCard.id, newRating, success);
   }
 
   renderStars() {

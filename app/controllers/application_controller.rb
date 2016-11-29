@@ -24,7 +24,8 @@ class ApplicationController < ActionController::Base
     params.require(:user).permit(:username, :password)
   end
 
-  # def redirect_home_if_not_logged_in
-  #   render json: {error: "Not logged in"}, status: 401 unless current_user
-  # end
+  def redirect_home_if_not_logged_in
+    render json: {error: "Not logged in"}, status: 401 unless current_user
+    return
+  end
 end
