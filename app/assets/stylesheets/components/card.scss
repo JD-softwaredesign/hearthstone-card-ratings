@@ -94,6 +94,10 @@
   margin: 0px 10px;
 }
 
+.star.disabled {
+  cursor: default;
+}
+
 .rating, .comments_container > form {
   height: 10vh;
   margin-bottom: 5vh;

@@ -11,6 +11,9 @@ class Rating extends React.Component {
   rateCard(newRating) {
     const { card, userId, indexCard } = this.props;
     let currentCard = card.id ? card : indexCard;
+    if (currentCard.released) {
+      return;
+    }
     let success = (res) => {
       this.props.receiveRating(res);
     };
@@ -25,7 +28,7 @@ class Rating extends React.Component {
     return stars.map((star) => {
       return <div style={{color: star <= (rating || 0) ? 'rgb(255, 180, 0)' : ""}}
         key={currentCard.name + star}
-        className="star"
+        className={"star" + (currentCard.released ? " disabled" : "")}
         onClick={ () => this.rateCard(star) }>★</div>;
     });
   }
