@@ -1,0 +1,95 @@
+@media (max-width: 500px) {
+
+  .logo {
+    font-size: 5vw;
+  }
+
+  .user-nav {
+    font-size: 4vw;
+  }
+
+  .crystal {
+    width: 5vw;
+    height: 5vw;
+    font-size: 5vw;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .hero_class_img {
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .index_card .star {
+    margin: 0 2px;
+    font-size: 5vw;
+  }
+
+  .index_card {
+    width: 44vw;
+  }
+
+  #session input {
+    width: 60%
+  }
+
+  #session button {
+    width: 50%;
+  }
+
+  .card_container {
+    flex-direction: column;
+    height: auto;
+    margin: 0;
+  }
+
+  .card {
+    width: auto;
+    margin-top: 10px;
+  }
+
+  .comments_container {
+    width: auto;
+    margin: 0;
+  }
+
+  .rating {
+    margin-bottom: 10px;
+  }
+
+  .comments h1 {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .comment-list {
+    height: 20vh;
+  }
+
+  .comments {
+    height: 35vh;
+  }
+
+  .comments_container form {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 5vh;
+    margin-bottom: 20px;
+  }
+
+  .comments_container input {
+    margin: 0;
+  }
+
+  .comments_container .add {
+    padding: 2px 10px;
+  }
+
+  .userpage > ul {
+    width: 70vw;
+  }
+}

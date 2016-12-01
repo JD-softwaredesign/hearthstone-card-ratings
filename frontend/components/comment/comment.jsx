@@ -6,7 +6,6 @@ class Comment extends React.Component {
   }
 
   delete () {
-    console.log(this.props.comment);
     this.props.deleteCardComment(this.props.comment.id);
   }
 
