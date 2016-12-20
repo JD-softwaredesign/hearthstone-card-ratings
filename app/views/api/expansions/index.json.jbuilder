@@ -1,2 +1,2 @@
-json.current @current, :id, :title, :image_url
+json.current @current, :id, :title
 json.index @expansions, :id, :title

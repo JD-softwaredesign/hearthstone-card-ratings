@@ -15,17 +15,28 @@ class User < ActiveRecord::Base
   validates :username, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
   after_initialize :ensure_session_token
-  has_many :ratings
-  has_many :rated_cards, through: :ratings, source: :card
   has_many :comments, dependent: :destroy
   attr_reader :password
+  after_initialize :set_rating_default
 
-  def user_ratings
-    data = {}
-    ratings.each do |rating|
-      data[rating.card_id] = rating.rating
+  def self.update_all_user_rating_length
+    # update all the users rating string length
+    # run this after add new card
+    card_length = Card.last.id
+    User.all.each do |user|
+      if user.rating.size < card_length
+        user.rating << '0' * (card_length - user.rating.size)
+      end
+      if user.arena_rating.size < card_length
+        user.arena_rating << '0' * (card_length - user.arena_rating.size)
+      end
     end
-    data
+  end
+
+  def set_rating_default
+    card_length = Card.last.id
+    self.rating = '0' * card_length
+    self.arena_rating = '0' * card_length
   end
 
   def password=(password)

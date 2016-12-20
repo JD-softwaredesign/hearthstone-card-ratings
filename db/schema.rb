@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161121020553) do
+ActiveRecord::Schema.define(version: 20161113184213) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,11 +25,11 @@ ActiveRecord::Schema.define(version: 20161121020553) do
     t.integer  "attack"
     t.integer  "health"
     t.text     "card_text"
+    t.string   "rarity"
     t.integer  "expansion_id", null: false
     t.boolean  "released",     null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.string   "rarity"
   end
 
   add_index "cards", ["expansion_id"], name: "index_cards_on_expansion_id", using: :btree
@@ -47,23 +48,14 @@ ActiveRecord::Schema.define(version: 20161121020553) do
     t.string   "title",      null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "image_url"
   end
-
-  create_table "ratings", force: :cascade do |t|
-    t.integer  "user_id",    null: false
-    t.integer  "card_id",    null: false
-    t.integer  "rating",     null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "ratings", ["user_id", "card_id"], name: "index_ratings_on_user_id_and_card_id", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
     t.string   "password_digest", null: false
     t.string   "session_token",   null: false
+    t.text     "rating",          null: false
+    t.text     "arena_rating",    null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

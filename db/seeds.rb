@@ -1,4 +1,6 @@
-Expansion.create!(title: 'Mean Streets of Gadgetzan', image_url: 'http://i.imgur.com/uxYAW91.png')
+Expansion.create!(title: 'Mean Streets of Gadgetzan')
+
+
 
 # {1: Druid, 2: Hunter, 3: Mage, 4: Paladin, 5: Priest, 6: Rogue, 7: Shaman,
 #  8: Warlock, 9: Warrior, 10: Neutral, 11: Tri-Class }
