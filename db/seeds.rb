@@ -1,7 +1,5 @@
 Expansion.create!(title: 'Mean Streets of Gadgetzan')
 
-
-
 # {1: Druid, 2: Hunter, 3: Mage, 4: Paladin, 5: Priest, 6: Rogue, 7: Shaman,
 #  8: Warlock, 9: Warrior, 10: Neutral, 11: Tri-Class }
 Card.create!(image_url: 'http://i.imgur.com/ccHsfLA.png', name: 'Toxic Sewer Ooze', hero_class: 10, mana: 3, attack: 4, health: 3, rarity: 'common', card_text: 'Battlecry: Remove 1 Durability from your opponent\'s weapon', expansion_id: 1, released: false)
@@ -80,3 +78,6 @@ Card.create!(image_url: 'http://i.imgur.com/zX8cVhI.png', name: 'Lunar Visions',
 Card.create!(image_url: 'http://i.imgur.com/MmsGQQC.png', name: 'Kooky Chemist', hero_class: 10, mana: 4, attack: 4, health: 4, rarity: 'common', card_text: 'Battlecry: Swap the Attack and Health of a minion.', expansion_id: 1, released: false)
 Card.create!(image_url: 'http://i.imgur.com/dfdVA2z.png', name: 'Wickerflame Burnbristle', hero_class: 4, mana: 3, attack: 2, health: 2, rarity: 'legendary', card_text: 'Divine Sheild. Taunt. Damage dealt by this minion also heals your hero.', expansion_id: 1, released: false)
 Card.create!(image_url: 'http://i.imgur.com/inV0q4I.png', name: 'I Know a Guy', hero_class: 9, mana: 1, rarity: 'common', card_text: 'Discover a Taunt minion.', expansion_id: 1, released: false)
+
+
+User.create!(username: "newuser", password: "password")

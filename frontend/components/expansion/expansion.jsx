@@ -22,6 +22,14 @@ class Expansion extends React.Component {
     };
   }
 
+  ratedFilterHelper(ratedState, rating, arenaRating) {
+    if (ratedState) {
+      return Boolean(Number(rating)) || Boolean(Number(arenaRating));
+    } else {
+      return Boolean(Number(rating)) === false && Boolean(Number(arenaRating)) === false;
+    }
+  }
+
   renderCards() {
     let cards = this.props.cards;
     let { mana, heroClass, rated } = this.state;
@@ -29,7 +37,7 @@ class Expansion extends React.Component {
       let composedFilter = true;
       let manaFilter = card.mana === mana || (mana === '7+' && card.mana >= 7);
       let classFilter = card.hero_class === heroClass;
-      let ratedFilter = Boolean(this.props.user_ratings[card.id]) === rated;
+      let ratedFilter = this.ratedFilterHelper(rated, this.props.rating[card.id-1], this.props.arena_rating[card.id-1]);
       let filters = [manaFilter, classFilter, ratedFilter];
       [mana, heroClass, rated].forEach((f, idx) => {
         if (f !== undefined) {

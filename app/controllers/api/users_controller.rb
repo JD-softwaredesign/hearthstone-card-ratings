@@ -22,16 +22,17 @@ class Api::UsersController < ApplicationController
   def rate
     @user = User.find_by(id: current_user.id)
     @card = Card.find_by(id: params[:card_id])
+    idx = params[:card_id].to_i - 1
     if @card.released
       render json: 'This card is already released', status: 403
     else
-      if params[:rate_type] == 'arena'
-        @user.arena_rating[params[:card_id] - 1] = params[:rating]
+      if params[:rate_type] != 'rating'
+        @user.arena_rating[idx] = params[:rating]
       else
-        @user.rating[params[:card_id] - 1] = params[:rating]
+        @user.rating[idx] = params[:rating]
       end
-      @user.save
-      render :show
+      @user.save!
+      render json: { type: params[:rate_type], rating: params[:rating], card_id: params[:card_id] }
     end
   end
 end

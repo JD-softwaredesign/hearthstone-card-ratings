@@ -8,7 +8,7 @@ class Rating extends React.Component {
     super(props);
   }
 
-  rateCard(newRating) {
+  rateCard(newRating, type) {
     const { card, indexCard } = this.props;
     let currentCard = card.id ? card : indexCard;
     if (currentCard.released) {
@@ -17,25 +17,31 @@ class Rating extends React.Component {
     let success = (res) => {
       this.props.receiveRating(res);
     };
-    sendRating(currentCard.id, newRating, success);
+    sendRating(currentCard.id, type, newRating, success);
   }
 
-  renderStars() {
+  renderRating(type) {
     let stars = [1, 2, 3, 4, 5];
-    const { card, ratings, indexCard } = this.props;
+    const { card, rating, arena_rating, indexCard } = this.props;
     let currentCard = indexCard ? indexCard : card;
-    let rating = ratings[currentCard.id];
+    let rate = type === 'rating' ? rating[currentCard.id-1] : arena_rating[currentCard.id-1];
+    let color = type === 'rating' ? 'rgb(255, 180, 0)' : 'rgb(255, 77, 77)';
     return stars.map((star) => {
-      return <div style={{color: star <= (rating || 0) ? 'rgb(255, 180, 0)' : ""}}
+      return <div style={{color: star <= (rate || 0) ? color : ""}}
         key={currentCard.name + star}
         className={"star" + (currentCard.released ? " disabled" : "")}
-        onClick={ () => this.rateCard(star) }>★</div>;
+        onClick={ () => this.rateCard(star, type) }>★</div>;
     });
   }
 
   render() {
     return <div className='rating'>
-      { this.renderStars() }
+      <label>Rating
+        { this.renderRating('rating') }
+      </label>
+      <label>Arena
+        { this.renderRating('arena_rating') }
+      </label>
     </div>;
   }
 }

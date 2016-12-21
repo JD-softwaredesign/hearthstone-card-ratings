@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
   has_many :comments, dependent: :destroy
   attr_reader :password
-  after_initialize :set_rating_default
+  before_create :set_rating_default
 
   def self.update_all_user_rating_length
     # update all the users rating string length
