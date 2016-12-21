@@ -36,10 +36,10 @@ class Rating extends React.Component {
 
   render() {
     return <div className='rating'>
-      <label>Rating
+      <label><p>Standard</p>
         { this.renderRating('rating') }
       </label>
-      <label>Arena
+      <label><p>Arena</p>
         { this.renderRating('arena_rating') }
       </label>
     </div>;

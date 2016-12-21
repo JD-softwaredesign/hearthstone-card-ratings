@@ -1,23 +1,29 @@
 .userpage > h1 {
-  margin: 5vh;
+  text-align: center;
   font-size: 3vh;
+  margin: 20px;
 }
 
-.userpage > ul {
-  margin-left: 6vh;
-  width: 30vw;
-}
-
-.userpage li {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.card_link {
-  cursor: pointer;
+.userpage > table {
+  width: 60vw;
+  margin: 0 auto;
 }
 
 .card_link:hover {
   text-decoration: underline;
+}
+
+th, td {
+  text-align: center;
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+td:first-of-type {
+  text-align: left;
+}
+
+.card_link {
+  cursor: pointer;
+  display: inline;
 }

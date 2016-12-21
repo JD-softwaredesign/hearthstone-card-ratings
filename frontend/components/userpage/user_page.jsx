@@ -7,7 +7,8 @@ class UserPage extends React.Component {
     super(props);
     this.state = {
       username: undefined,
-      user_ratings: {},
+      rating: "",
+      arena_rating: "",
       id: undefined
     };
   }
@@ -21,13 +22,13 @@ class UserPage extends React.Component {
     if (this.state.id === Number(params.id)) { return; }
     let fetchUserSuccess = (user) => {
       user = user.user;
-      this.setState({username: user.username, user_ratings: user.user_ratings, id: user.id});
+      this.setState({username: user.username, rating: user.rating, arena_rating: user.arena_rating, id: user.id});
     };
     let fetchUserError = (error) => {
       this.props.router.push('/');
     };
     if (Number(params.id) === session.id) {
-      this.setState({username: session.username, user_ratings: session.user_ratings, id: session.id});
+      this.setState({username: session.username, rating: session.rating, arena_rating: session.arena_rating, id: session.id});
     } else {
       fetchUser(params.id, fetchUserSuccess, fetchUserError);
     }
@@ -39,21 +40,31 @@ class UserPage extends React.Component {
 
   renderRatings() {
     let user = this.state;
-    let rated = this.props.cards.filter((card) => user.user_ratings[card.id]);
+    let rated = this.props.cards.filter((card) => Number(user.rating[card.id-1]) || Number(user.arena_rating[card.id-1]));
     return rated.map((card) => {
-      return <li key={card.name}>
-        <p className="card_link" onClick={ this.goToCard.bind(this, card.id) }>{card.name}</p>
-        <p>{user.user_ratings[card.id]}</p>
-      </li>;
+      return <tr key={card.name}>
+        <td><p className="card_link" onClick={ this.goToCard.bind(this, card.id) }>{card.name}</p></td>
+        <td>{user.rating[card.id-1] === '0' ? "" : user.rating[card.id-1] }</td>
+        <td>{user.arena_rating[card.id-1] === '0' ? "" : user.arena_rating[card.id-1] }</td>
+      </tr>;
     });
   }
 
   render() {
     return <div className="userpage">
       <h1>{`${this.state.username}'s Ratings`}</h1>
-      <ul>
+      <table>
+        <thead>
+          <tr>
+            <th>Card</th>
+            <th>Standard</th>
+            <th>Arena</th>
+          </tr>
+        </thead>
+        <tbody>
         { this.renderRatings() }
-      </ul>
+        </tbody>
+      </table>
     </div>;
   }
 }
