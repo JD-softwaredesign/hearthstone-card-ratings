@@ -30,6 +30,7 @@ class User < ActiveRecord::Base
       if user.arena_rating.size < card_length
         user.arena_rating << '0' * (card_length - user.arena_rating.size)
       end
+      user.save
     end
   end
 
