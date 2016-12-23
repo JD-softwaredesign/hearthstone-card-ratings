@@ -1,0 +1,5 @@
+statistic page
+- instead of statistic page, how about make expansions component smarter so it shows the statistic of the cards if they are all released and show the ratings page if they are not.
+
+Other than that, seems good to me.
+Any other feature suggestions?
