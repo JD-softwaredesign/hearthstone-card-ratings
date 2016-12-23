@@ -35,9 +35,9 @@ class User < ActiveRecord::Base
   end
 
   def set_rating_default
-    card_length = Card.last.id
-    self.rating = '0' * card_length
-    self.arena_rating = '0' * card_length
+    card_length = Card.last.id || 0
+    self.rating = '0' * card_length || ''
+    self.arena_rating = '0' * card_length || ''
   end
 
   def password=(password)

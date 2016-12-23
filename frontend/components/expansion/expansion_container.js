@@ -8,7 +8,4 @@ const mapStateToProps = (state) => ({
   arena_rating: state.session.arena_rating
 });
 
-const mapDispatchToProps = (dispatch) => ({
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Expansion);
+export default connect(mapStateToProps)(Expansion);

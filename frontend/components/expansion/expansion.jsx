@@ -1,5 +1,6 @@
 import React from 'react';
 import ExpansionIndexItem from './expansion_index_item.jsx';
+import Notification from './notification.jsx';
 
 const heroClassImages = ['', 'http://i.imgur.com/r3BYqXS.png',
 'http://i.imgur.com/zwYlp7S.png',
@@ -103,8 +104,10 @@ class Expansion extends React.Component {
   }
 
   render() {
+    let last = this.props.cards[this.props.cards.length-1];
     return (
       <div>
+        <Notification lastCard={last} />
         <div className='filters'>
           <div className="mana_filter">{ this.manaFilters() }</div>
           <div className="class_filter">{ this.heroClassFilters() }</div>
