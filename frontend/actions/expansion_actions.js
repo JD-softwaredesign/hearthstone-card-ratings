@@ -1,7 +1,13 @@
 const ExpansionConstants = {
   REQUEST_EXPANSIONS: "REQUEST_EXPANSIONS",
-  RECEIVE_EXPANSIONS: "RECEIVE_EXPANSIONS"
+  RECEIVE_EXPANSIONS: "RECEIVE_EXPANSIONS",
+  UPDATE_CURRENT: "UPDATE_CURRENT"
 };
+
+const updateCurrent = (id) => ({
+  type: ExpansionConstants.UPDATE_CURRENT,
+  id
+});
 
 const requestExpansions = () => ({
   type: ExpansionConstants.REQUEST_EXPANSIONS
@@ -12,4 +18,4 @@ const receiveExpansions = (expansions) => ({
   expansions
 });
 
-export { ExpansionConstants, requestExpansions, receiveExpansions };
+export { ExpansionConstants, requestExpansions, receiveExpansions, updateCurrent };

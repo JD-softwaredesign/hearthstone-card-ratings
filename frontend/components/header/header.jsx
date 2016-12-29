@@ -16,6 +16,21 @@ class Header extends React.Component {
     this.props.router.push(`/${this.props.userId}`);
   }
 
+
+  renderExpansionSelect() {
+    if (this.props.expansions.length) {
+      return <select
+        defaultValue={this.props.current.id}
+        onChange={ (e) => {
+          this.props.requestExpansionCards(e.target.value);
+        } }>
+        { this.props.expansions.map((el) => {
+          return <option key={el.title} value={el.id}>{el.title}</option>;
+        })}
+      </select>;
+    }
+  }
+
   render () {
     if (['/signin', '/signup'].includes(this.props.location.pathname)) {
       return <div></div>;
@@ -31,6 +46,7 @@ class Header extends React.Component {
             <div onClick={ this.userPageLink.bind(this) }>{ this.props.username }</div>
             <Link onClick={ this.props.signOut }>Logout</Link>
           </div>
+          {this.renderExpansionSelect() }
         </header>
       );
     }

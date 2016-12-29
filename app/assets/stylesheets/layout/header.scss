@@ -47,3 +47,9 @@ header {
 red {
   color: red;
 }
+
+header > select {
+  position: absolute;
+  top: 100px;
+  right: 20px;
+}

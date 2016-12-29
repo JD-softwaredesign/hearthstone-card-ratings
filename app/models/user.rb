@@ -35,7 +35,8 @@ class User < ActiveRecord::Base
   end
 
   def set_rating_default
-    card_length = Card.last.id || 0
+    last = Card.last
+    card_length = last ? last.id : 0
     self.rating = '0' * card_length || ''
     self.arena_rating = '0' * card_length || ''
   end
