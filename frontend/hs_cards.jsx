@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
       id: undefined
     },
     expansions: {
-      current: {id: undefined, title: '', image_url: ''},
+      current: {id: undefined, title: ''},
       index: []
     },
     cards: [],
@@ -28,7 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
            released: false,
            tribe: '',
            rarity: '',
-           card_comments: []}
+           card_comments: [],
+           standard: 0,
+           arena: 0}
   };
   if (window.currentUser) {
     preloadedState.session = window.currentUser.user;
