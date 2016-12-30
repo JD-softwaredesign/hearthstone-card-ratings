@@ -1,3 +1,6 @@
+Expansion.delete_all
+Card.delete_all
+
 Expansion.create!(title: 'Whispers of the Old Gods')
 Expansion.create!(title: 'Mean Streets of Gadgetzan')
 

@@ -7,7 +7,7 @@ class Api::ExpansionsController < ApplicationController
 
   def show
     @expansion = Expansion.find_by(id: params[:id])
-    @cards = @expansion.cards
+    @cards = @expansion.cards.order(:created_at)
     render :show
   end
 end
