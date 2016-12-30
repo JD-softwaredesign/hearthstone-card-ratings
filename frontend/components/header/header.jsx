@@ -23,6 +23,7 @@ class Header extends React.Component {
         defaultValue={this.props.current.id}
         onChange={ (e) => {
           this.props.requestExpansionCards(e.target.value);
+          this.homeLink();
         } }>
         { this.props.expansions.map((el) => {
           return <option key={el.title} value={el.id}>{el.title}</option>;

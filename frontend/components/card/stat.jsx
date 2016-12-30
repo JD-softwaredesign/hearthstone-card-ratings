@@ -12,13 +12,13 @@ const Stat = ({card, user}) => {
     <tbody>
       <tr>
         <td>Average</td>
-        <td>{card.standard}</td>
-        <td>{card.arena}</td>
+        <td>{card.standard ? card.standard.toFixed(2) : 'Not rated'}</td>
+        <td>{card.arena ? card.arena.toFixed(2) : 'Not rated'}</td>
       </tr>
       <tr>
         <td>Yours</td>
-        <td>{user.rating[card.id-1]}</td>
-        <td>{user.arena_rating[card.id-1]}</td>
+        <td>{Number(user.rating[card.id-1]) || 'Not rated'}</td>
+        <td>{Number(user.arena_rating[card.id-1]) || 'Not rated'}</td>
       </tr>
     </tbody>
   </table>;

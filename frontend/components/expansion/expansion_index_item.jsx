@@ -7,9 +7,15 @@ const ExpansionIndexItem = ({card, router}) => {
     router.push(`/cards/${card.id}`);
   };
 
+  const showProperUI = () => {
+    if (!card.released) {
+      return <RatingContainer indexCard={ card }/>;
+    }
+  };
+
   return <div className='index_card'>
     <img src={card.image_url} onClick={ goToCardDetail }></img>
-    <RatingContainer indexCard={ card }/>
+    { showProperUI() }
   </div>;
 };
 
