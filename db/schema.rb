@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 20161229215010) do
     t.boolean  "released",     null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.decimal  "standard"
-    t.decimal  "arena"
+    t.float    "standard"
+    t.float    "arena"
   end
 
   add_index "cards", ["expansion_id"], name: "index_cards_on_expansion_id", using: :btree
