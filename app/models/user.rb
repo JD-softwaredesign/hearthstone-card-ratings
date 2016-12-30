@@ -19,6 +19,37 @@ class User < ActiveRecord::Base
   attr_reader :password
   before_create :set_rating_default
 
+  def self.build_statistic(s, e)
+    rating = {}
+    arena = {}
+    User.all.each do |user|
+      (s..e).each do |i|
+        if user.rating[i - 1] != '0'
+          rating[i] = [0, 0] if rating[i].nil?
+          rating[i][0] += user.rating[i - 1].to_i
+          rating[i][1] += 1
+        end
+        if user.arena_rating[i - 1] != '0'
+          arena[i] = [0, 0] if arena[i].nil?
+          arena[i][0] += user.arena_rating[i - 1].to_i
+          arena[i][1] += 1
+        end
+      end
+    end
+
+    rating.each do |k, v|
+      card = Card.find(k)
+      card.standard = (v[0].to_f / v[1].to_f).round(2)
+      card.save
+    end
+
+    arena.each do |k, v|
+      card = Card.find(k)
+      card.arena = (v[0].to_f / v[1].to_f).round(2)
+      card.save
+    end
+  end
+
   def self.update_all_user_rating_length
     # update all the users rating string length
     # run this after add new card
