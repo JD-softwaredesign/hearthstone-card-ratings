@@ -32,4 +32,15 @@ class Card < ActiveRecord::Base
     end
     data
   end
+
+  def self.build_statistic
+    Card.all.each do |card|
+      sum = card.ratings.inject(0) { |a, e| a + e.rating }
+      c = card.ratings.count
+      unless sum.zero?
+        card.average = (sum.to_f / c.to_f).round(2)
+        card.save
+      end
+    end
+  end
 end

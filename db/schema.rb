@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 20161229215010) do
   enable_extension "plpgsql"
 
   create_table "cards", force: :cascade do |t|
-    t.string   "image_url",    null: false
-    t.string   "name",         null: false
-    t.integer  "hero_class",   null: false
+    t.string   "image_url",                  null: false
+    t.string   "name",                       null: false
+    t.integer  "hero_class",                 null: false
     t.string   "tribe"
-    t.integer  "mana",         null: false
+    t.integer  "mana",                       null: false
     t.integer  "attack"
     t.integer  "health"
     t.text     "card_text"
