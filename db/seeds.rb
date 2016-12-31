@@ -1,93 +1,11 @@
-Expansion.delete_all
-Card.delete_all
-
-Expansion.create!(title: 'Whispers of the Old Gods')
-Expansion.create!(title: 'Mean Streets of Gadgetzan')
+# add more cards here
+# after running rake db:seed, move cards data over to the old.rb
 
 # {1: Druid, 2: Hunter, 3: Mage, 4: Paladin, 5: Priest, 6: Rogue, 7: Shaman,
 #  8: Warlock, 9: Warrior, 10: Neutral, 11: Tri-Class }
 
+# sample card creating format
+# Card.create!(image_url: 'http://i.imgur.com/ccHsfLA.png', name: 'Toxic Sewer Ooze', hero_class: 10, mana: 3, attack: 4, health: 3, rarity: 'common', card_text: 'Battlecry: Remove 1 Durability from your opponent\'s weapon', expansion_id: 1, released: false)
 
-User.create!(username: "newuser", password: "password")
-
-Card.create!(image_url: 'http://i.imgur.com/ccHsfLA.png', name: 'Toxic Sewer Ooze', hero_class: 10, mana: 3, attack: 4, health: 3, rarity: 'common', card_text: 'Battlecry: Remove 1 Durability from your opponent\'s weapon', expansion_id: 1, released: false)
-Card.create!(image_url: 'http://i.imgur.com/TEP19s8.png', name: 'Kabal Crystal Runner', hero_class: 3, mana: 6, attack: 5, health: 5, rarity: 'rare', card_text: 'Costs (2) less for each Secret you\'ve played this game', expansion_id: 1, released: false)
-Card.create!(image_url: 'http://i.imgur.com/iLBa5N8.png', name: 'Bomb Squad', hero_class: 10, mana: 5, attack: 2, health: 2, rarity: 'rare', card_text: 'Battlecry: Deal 5 damage to an enemy minion. Deathrattle: Deal 5 damage to your hero.', expansion_id: 1, released: false)
-Card.create!(image_url: 'http://i.imgur.com/7mXei0a.png', name: 'Spiked Hogrider', hero_class: 10, mana: 5, attack: 5, health: 5, rarity: 'rare', card_text: 'Battlecry: If an enemy minion has Taunt, gain Charge', expansion_id: 1, released: false)
-Card.create!(image_url: 'http://i.imgur.com/DgC47bo.png', name: 'Inkmaster Solia', hero_class: 3, mana: 7, attack: 5, health: 5, rarity: 'legendary', card_text: 'Battlecry: If your deck has no duplicates, the next spell you cast this turn costs (0)', expansion_id: 1, released: false)
-Card.create!(image_url: 'http://i.imgur.com/jY4TgMN.png', name: 'Raza the Chained', hero_class: 5, mana: 5, attack: 5, health: 5, rarity: 'legendary', card_text: 'Battlecry: If your deck has no duplicates, your hero Powers costs (0) this game.', expansion_id: 1, released: false)
-
-User.update_all_user_rating_length
-
-Card.create!(image_url: 'http://i.imgur.com/7W1AeML.png', name: 'Kabal Lackey', hero_class: 3, mana: 1, attack: 2, health: 1, rarity: 'common', card_text: 'Battlecry: The next secret you play this turn costs (0).', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/h8RrhoH.png', name: 'Backstreet Leper', hero_class: 10, mana: 3, attack: 3, health: 1, rarity: 'common', card_text: 'Deathrattle: Deal 2 damage to the enemy hero.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/aOqa3mc.png', name: 'Madam Goya', hero_class: 10, mana: 6, attack: 4, health: 3, rarity: 'legendary', card_text: 'Battlecry: Choose a friendly minion. Swap it with a minion in your deck.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/yuV0TI7.png', name: 'Seadevil Stinger', hero_class: 8, mana: 4, attack: 4, health: 2, rarity: 'rare', card_text: 'Battlecry: The next Murloc you play this turn costs Health instead of Mana.', tribe: 'Murloc', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/AXZF57M.png', name: 'Abyssal Enforcer', hero_class: 8, mana: 7, attack: 6, health: 6, rarity: 'common', card_text: 'Battlecry: Deal 3 damage to all other characters', tribe: 'Demon', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/wwuXpjp.png', name: 'Tanatis Hogchopper', hero_class: 10, mana: 4, attack: 4, health: 4, rarity: 'common', card_text: 'Battlecry: If your opponent\'s  hand is empty, gain Charge', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/0BkYxvb.png', name: 'Grimy Gadgeteer', hero_class: 9, mana: 4, attack: 4, health: 3, rarity: 'common', card_text: 'At the end of your turn, give a random minion in your hand +2/+2.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/86m2xfH.png', name: 'Leatherclad Hogleader', hero_class: 10, mana: 6, attack: 6, health: 6, rarity: 'epic', card_text: 'Battlecry: If your opponent has 6 or more cards in hand, gain Charge', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/AJ08cu0.png', name: 'Grimscale Chum', hero_class: 4, mana: 1, attack: 2, health: 1, rarity: 'common', card_text: 'Battlecry: Give a random Murloc in your hand +1/+1.', tribe: 'Murloc', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/hYzm2ww.png', name: 'Grimestreet Protector', hero_class: 4, mana: 7, attack: 6, health: 6, rarity: 'rare', card_text: 'Taunt. Battlecry: Give adjacent minion Divine Shield', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/Db0ki26.png', name: 'Blowgill Sniper', hero_class: 10, mana: 2, attack: 2, health: 1, rarity: 'common', card_text: 'Battlecry: Deal 1 damage.', tribe: 'Murloc', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/AVnVkSu.png', name: 'Kabal Chemist', hero_class: 'Kabal', mana: 4, attack: 3, health: 3, rarity: 'common', card_text: 'Battlecry: Add a random Potion to your hand.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/RQQ54Vs.png', name: 'Dispatch Kodo', hero_class: 2, mana: 4, attack: 2, health: 4, rarity: 'rare', card_text: 'Battlecry: Deal damage equal to this minion\'s attack.', tribe: 'Beast', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/YSZYz2Q.png', name: 'Rat Pack', hero_class: 2, mana: 3, attack: 2, health: 2, rarity: 'epic', card_text: 'Deathrattle: Summon a number of 1/1 Rats equal to this minion\'s attack.', tribe: 'Beast', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/Uysb7gp.png', name: 'Dopplegangster', hero_class: 10, mana: 5, attack: 2, health: 2, rarity: 'rare', card_text: 'Battlecry: Summon 2 copies of this minion.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/2pLNsXb.png', name: 'Knuckles', hero_class: 2, mana: 5, attack: 3, health: 7, rarity: 'legendary', card_text: 'After this attacks a minion, it also hits the enemy hero.', expansion_id: 2, tribe: 'Beast', released: false)
-Card.create!(image_url: 'http://i.imgur.com/l2LM5Eu.png', name: 'Smuggler\'s Run', hero_class: 4, mana: 1, rarity: 'common', card_text: 'Give all minions in your hand +1/+1.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/O9S52Cj.png', name: 'Backroom Bouncer', hero_class: 10, mana: 4, attack: 4, health: 4, rarity: 'rare', card_text: 'Whenever a friendly minion dies, gain +1 Attack.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/4ySF5BP.png', name: 'Hired Gun', hero_class: 10, mana: 3, attack: 4, health: 3, rarity: 'common', card_text: 'Taunt', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/Br0uH42.png', name: 'Don Han\'Cho', hero_class: 'Grimy Goons', mana: 7, attack: 5, health: 6, rarity: 'legendary', card_text: 'Battlecry: Give a random minion in your hand +5/+5.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/xYmJCy0.png', name: 'Worgen Greaser', hero_class: 10, mana: 4, attack: 6, health: 3, rarity: 'common', card_text: '', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/QrLMzDw.png', name: 'Dirty Rat', hero_class: 10, mana: 2, attack: 2, health: 6, rarity: 'epic', card_text: 'Taunt Battlecry: Your opponent summons a random minion from their hand.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/0V77kSH.png', name: 'Jade Blossom', hero_class: 1, mana: 3, rarity: 'common', card_text: 'Summon a Jade Golem. Gain an empty Mana Crystal.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/j2mR1DB.png', name: 'Grook Fu Master', hero_class: 10, mana: 5, attack: 3, health: 5, rarity: 'common', card_text: 'Windfury', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/cBeh7jb.png', name: 'Manic Soulcaster', hero_class: 3, mana: 3, attack: 3, health: 4, rarity: 'epic', card_text: 'Battlecry: Choose a friendly minion. Shuffle a copy into your deck.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/e66BT64.png', name: 'Grimestreet Enforcer', hero_class: 4, mana: 5, attack: 4, health: 4, rarity: 'rare', card_text: 'At the end of your turn, give all minions in your hand +1/+1.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/82G3wgV.png', name: 'Shaky Zipgunner', hero_class: 2, mana: 3, attack: 3, health: 3, rarity: 'common', card_text: 'Deathrattle: Give a random minion in your hand +2/+2.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/IVNECAo.png', name: 'Grimestreet Pawnbroker', hero_class: 9, mana: 3, attack: 3, health: 3, rarity: 'rare', card_text: 'Battlecry: Give a random weapon in your hand +1/+1.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/lqoixxO.png', name: 'Alley Armorsmith', hero_class: 9, mana: 5, attack: 2, health: 7, rarity: 'rare', card_text: 'Taunt Whenever this minion deals damage, gain that much Armor.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/sxnZcvr.png', name: 'Grimestreet Smuggler', hero_class: 'Grimy Goons', mana: 3, attack: 2, health: 4, rarity: 'common', card_text: 'Battlecry: Give a random minion in your hand +1/+1.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/z9XpTnC.png', name: 'Trogg Beastrager', hero_class: 2, mana: 2, attack: 2, health: 3, rarity: 'rare', card_text: 'Battlecry: Give a random Beast in your hand +1/+1.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/c6sHw7B.png', name: 'Grimestreet Outfitter', hero_class: 4, mana: 2, attack: 1, health: 1, rarity: 'rare', card_text: 'Battlecry: Give all minions in your hand +1/+1.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/X7jtO61.png', name: 'Wind-up Burglebot', hero_class: 10, mana: 6, attack: 5, health: 5, rarity: 'epic', card_text: 'Whenever this minion attacks and survives, draw a card.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/zZw9gk2.png', name: 'Kabal Talonpriest', hero_class: 5, mana: 3, attack: 3, health: 4, rarity: 'common', card_text: 'Battlecry: Give a friendly minion +3 Health.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/cNVcCK3.png', name: 'Bloodfury Potion', hero_class: 8, mana: 3, rarity: 'rare', card_text: 'Give a minion +3 Attack. If it\'s a Demon, also give it +3 Health.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/CO0pZM7.png', name: 'Felfire Potion', hero_class: 8, mana: 6, rarity: 'rare', card_text: 'Deal 5 damage to all characters.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/fPf4HfT.png', name: 'Mistress of Mixtures', hero_class: 10, mana: 1, attack: 2, health: 2, rarity: 'common', card_text: 'Deathrattle: Restore 4 Health to both players.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/81DBzs5.png', name: 'Shaku, the Collector', hero_class: 6, mana: 3, attack: 2, health: 3, rarity: 'legendary', card_text: 'Stealth. Whenever this attacks, add a random card to your hand (from your opponent\'s class)', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/qP9MPCB.png', name: 'Big-Time Racketeer', hero_class: 10, mana: 6, attack: 1, health: 1, rarity: 'common', card_text: 'Battlecry: Summon a 6/6 Ogre.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/ai1NnTD.png', name: 'Brass Knuckles', hero_class: 9, mana: 4, attack: 2, health: 3, rarity: 'epic', card_text: 'After your hero attacks, give a random minion in your hand +1/+1.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/LpAIEHx.png', name: 'Potion of Polymorph', hero_class: 3, mana: 3, rarity: 'rare', card_text: 'Secret: After your opponent plays a minion, transform it into a 1/1 Sheep.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/tjG6HvG.png', name: 'Gateway Kodo', hero_class: 4, mana: 1, rarity: 'rare', card_text: 'Secret: When a friendly minion dies, return it to your hand.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/U699mbq.png', name: 'Auctionmaster Beardo', hero_class: 10, mana: 3, attack: 3, health: 4, rarity: 'legendary', card_text: 'After you cast a spell, refresh your Hero Power.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/0hu7kty.png', name: 'Volcanic Potion', hero_class: 3, mana: 3, rarity: 'rare', card_text: 'Deal 2 damage to all minions.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/kUizjWI.png', name: 'Lotus Assassin', hero_class: 6, mana: 5, attack: 5, health: 5, rarity: 'epic', card_text: 'Stealth. Whenever this attacks and kills a minion, gain Stealth.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/4P6QfeF.png', name: 'Pilfered Power', hero_class: 1, mana: 3, rarity: 'epic', card_text: 'Gain an empty Mana Crystal for each friendly minion.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/PkPmLdX.png', name: 'Lotus Agents', hero_class: 'Jade Lotus', mana: 5, attack: 5, health: 3, rarity: 'rare', card_text: 'Battlecry: Discover a Druid, Rogue, or Shaman card.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/ZQqfGmO.png', name: 'Finja, the Flying Star', hero_class: 10, mana: 5, attack: 2, health: 4, rarity: 'legendary', card_text: 'Stealth. Whenever this attacks and kills a minion, summon 2 Murlocs from your deck.', tribe: 'Murloc', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/6sChtjU.png', name: 'Stolen Goods', hero_class: 9, mana: 2, rarity: 'rare', card_text: 'Give a random Taunt minion in your hand +3/3.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/5o84HAP.png', name: 'Patches the Pirate', hero_class: 10, mana: 1, attack: 1, health: 1, rarity: 'legendary', card_text: 'Charge. After you play a Pirate summon this minion from your deck.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/wKNuuoM.png', name: 'Piranha Launcher', hero_class: 2, mana: 5, attack: 2, health: 4, rarity: 'epic', card_text: 'After your hero attacks, summon a 1/1 Piranha.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/t3eJc9K.png', name: 'Friendly Bartender', hero_class: 10, mana: 2, attack: 2, health: 3, rarity: 'common', card_text: 'At the end of your turn restore 1 Health to your hero.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/eRUYhzl.png', name: 'Second-Rate Bruiser', hero_class: 10, mana: 5, attack: 4, health: 5, rarity: 'rare', card_text: 'Taunt. Costs (2) less if your opponent has at least three minions.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/YsXMPsq.png', name: 'Grimestreet Informant', hero_class: 'Grimy Goons', mana: 2, attack: 1, health: 1, rarity: 'rare', card_text: 'Battlecry: Discover a Hunter, Paladin, or Warrior card.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/dim8FqU.png', name: 'Fel Orc Soulfiend', hero_class: 10, mana: 3, attack: 3, health: 7, rarity: 'epic', card_text: 'At the start of your turn, deal 2 damage to this minion.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/4svOs6Q.png', name: 'Small-Time Recruits', hero_class: 4, mana: 3, rarity: 'epic', card_text: 'Draw three 1-Cost minions from your deck', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/prnX936.png', name: 'Kabal Courier', hero_class: 'Kabal', mana: 3, attack: 2, health: 2, rarity: 'rare', card_text: 'Battlecry: Discover a Mage, Priest, or Warlock card.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/ZcuEFgr.png', name: 'Dragonfire Potion', hero_class: 5, mana: 6, rarity: 'epic', card_text: 'Deal 5 damage to all minions except Dragons', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/hy027tt.png', name: 'Pint-Size Potion', hero_class: 5, mana: 1, rarity: 'rare', card_text: 'Give all enemy minions -3 Attack this turn only.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/0OurXME.png', name: 'Kazakus', hero_class: 'Kabal', mana: 4, attack: 3, health: 3, rarity: 'legendary', card_text: 'Battlecry: If your deck contains no duplicates, create a custom spell.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/mHhZKcD.png', name: 'Potion of Madness', hero_class: 5, mana: 1, rarity: 'common', card_text: 'Gain control of an enemy minion with 2 or less Attack until end of turn.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/ToCBl6j.png', name: 'Meanstreet Marshal', hero_class: 4, mana: 1, attack: 1, health: 2, rarity: 'epic', card_text: 'Deathrattle: If this minion has 2 or more Attack, draw a card.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/tyCax6Z.png', name: 'Counterfeit Coin', hero_class: 6, mana: 0, rarity: 'rare', card_text: 'Gain 1 Mana Crystal this turn only.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/uqDMtkH.png', name: 'Kun the Forgotten King', hero_class: 1, mana: 10, attack: 7, health: 7, rarity: 'legendary', card_text: 'Choose One - Gain 10 Armor; or Refresh your Mana Crystals.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/DObmXyI.png', name: 'Drakonid Operative', hero_class: 5, mana: 5, attack: 5, health: 6, rarity: 'rare', card_text: 'Battlecry: If you\'re holding a Dragon, Discover a card in your opponent\'s deck.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/svymYLF.png', name: 'Mark of the Lotus', hero_class: 1, mana: 1, rarity: 'common', card_text: 'Give your minions +1/+1.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/zX8cVhI.png', name: 'Lunar Visions', hero_class: 1, mana: 5, rarity: 'epic', card_text: 'Draw 2 cards. Minions drawn cost (2) less.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/MmsGQQC.png', name: 'Kooky Chemist', hero_class: 10, mana: 4, attack: 4, health: 4, rarity: 'common', card_text: 'Battlecry: Swap the Attack and Health of a minion.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/dfdVA2z.png', name: 'Wickerflame Burnbristle', hero_class: 4, mana: 3, attack: 2, health: 2, rarity: 'legendary', card_text: 'Divine Sheild. Taunt. Damage dealt by this minion also heals your hero.', expansion_id: 2, released: false)
-Card.create!(image_url: 'http://i.imgur.com/inV0q4I.png', name: 'I Know a Guy', hero_class: 9, mana: 1, rarity: 'common', card_text: 'Discover a Taunt minion.', expansion_id: 2, released: false)
-
+# keep this line at the end of this file always
 User.update_all_user_rating_length
