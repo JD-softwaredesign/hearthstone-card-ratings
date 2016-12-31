@@ -39,9 +39,12 @@ class Expansion extends React.Component {
       return composedFilter;
     });
     return cards.map((card) => {
+      // for statistic
+      if (card.average !== 0) {
       return <ExpansionIndexItem
         key={card.name}
         card={ card }/>;
+    }
     });
   }
 
