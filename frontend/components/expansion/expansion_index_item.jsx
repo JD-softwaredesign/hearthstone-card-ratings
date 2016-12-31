@@ -9,6 +9,7 @@ const ExpansionIndexItem = ({card, router}) => {
 
   return <div className='index_card'>
     <img src={card.image_url} onClick={ goToCardDetail }></img>
+    { card.average }
     <RatingContainer indexCard={ card }/>
   </div>;
 };
