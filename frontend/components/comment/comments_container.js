@@ -5,7 +5,4 @@ const mapStateToProps = (state) => ({
   comments: state.card.card_comments
 });
 
-const mapDispatchToProps = (dispatch) => ({
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Comments);
+export default connect(mapStateToProps)(Comments);

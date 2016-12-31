@@ -6,7 +6,4 @@ const mapStateToProps = (state) => ({
   user: state.session
 });
 
-const mapDispatchToProps = (dispatch) => ({
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Card);
+export default connect(mapStateToProps)(Card);

@@ -15,7 +15,9 @@ let defaultState = {
   released: false,
   tribe: '',
   rarity: '',
-  card_comments: []
+  card_comments: [],
+  standard: 0,
+  arena: 0
 };
 
 const CardReducer = (state = defaultState, action) => {
